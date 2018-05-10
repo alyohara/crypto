@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.icowatchlist.com	TRUE	/	FALSE	1999999999	__cfduid	d84e02e5f3eb609df810fd28df7072a101524862960
+
