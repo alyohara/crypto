@@ -7121,6 +7121,7 @@ fieldset[disabled] .post-password-form label > input {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 .widget-bar {
@@ -14998,6 +14999,7 @@ div.wpcf7 img.ajax-loader {
   position: relative;
   padding: 200px 0 70px;
   z-index: 200;
+    background-color: #cbcbcb;
 }
 
 .banner--wide .banner__item:before,
@@ -17294,7 +17296,7 @@ fieldset[disabled] .dropdown--select .dropdown-toggle {
 
 @media (min-width: 768px) {
   .navbar--header.header-fixed {
-    position: fixed;
+
     top: -65px;
     left: 0;
     right: 0;
@@ -17329,7 +17331,7 @@ fieldset[disabled] .dropdown--select .dropdown-toggle {
 }
 
 .navbar--overlay.header-fixed {
-  background: #fff;
+  background: #222222;
 }
 
 .navbar--overlay.header-fixed .navbar__link {
