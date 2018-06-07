@@ -2,39 +2,58 @@
 
 
       <!-- BEGIN NAVBAR-->
-      <div id="header-nav-offset"></div>
       <nav id="header-nav" class="navbar navbar--header navbar--overlay">
         <div class="container">
-          <div class="navbar__row js-navbar-row">
+          <div class="navbar__row js-navbar-row"><a href="index.html" class="navbar__brand">
             <a href="index.html" class="navbar__brand">
-                <img src="assets/img/logoCoinMarket.png" width="1000" >
+              <img src="assets/img/logoCoinMarketBlanco.png" width="1000" >
             </a>
             <div id="navbar-collapse-1" class="navbar__wrap">
               <ul class="navbar__nav">
-                <li class="navbar__item js-dropdown active ">
-                    <a class="navbar__link">COINMARKETCAP</a>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">COINMARKETCAP
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
                 </li>
-                <li class="navbar__item js-dropdown ">
-                    <a class="navbar__link">CRYPTOMONEDAS</a>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">CRYPTOMONEDAS
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
                 </li>
-                <li class="navbar__item js-dropdown ">
-                    <a class="navbar__link">NOTICIAS</a>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">NOTICIAS
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
                 </li>
-                <li class="navbar__item js-dropdown ">
-                    <a class="navbar__link">CALCULADORA</a>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">CALCULADORA
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
                 </li>
-                <li class="navbar__item js-dropdown ">
-                    <a class="navbar__link">ICOS</a>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">ICOS
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
                 </li>
-                <li class="navbar__item js-dropdown ">
-                    <a class="navbar__link">FORMACION</a>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">FORMACION
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
                 </li>
+
               </ul>
               <!-- end of block  navbar__nav-->
             </div>
           </div>
         </div>
       </nav>
+
       <!-- END NAVBAR-->
       <div class="site-wrap js-site-wrap">
         <div class="widget js-widget">
@@ -52,9 +71,9 @@
                 <div class="container">
                   <div class="row">
 
-                    <div class="banner__caption">
+                  <!--  <div class="banner__caption">
                         <img src="assets/img/criptolist.png" height="100%" width="100%">
-                    </div>
+                    </div>-->
 
 
                     <div class="banner__search">
