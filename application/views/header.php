@@ -60,8 +60,10 @@
       <!-- BEGIN HEADER-->
       <header class="header header--overlay header--dark">
         <div class="container">
-          <div class="header__row"><a href="index.html" class="header__logo">
-              <img src="assets/img/logoCoinMarketBlanco.png" ></a>
+          <div class="header__row">
+            <a href="index.html" class="header__logo">
+              <img src="assets/img/logoCoinMarketBlanco.png" >
+            </a>
             <div class="header__settings">
 
                     <div class="header__settings-column">
@@ -210,6 +212,8 @@
       <div class="row">
           <div class="col-md-1">
 
+
+                <!--<a href="#"><img src="assets/img/banner2.png" width="100%" ></a>-->
 
 
           </div>

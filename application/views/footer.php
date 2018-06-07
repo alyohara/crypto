@@ -1,12 +1,10 @@
 
-
-      </div>
-          <div class="col-md-1">
-
-
-
-      </div>
   </div>
+</div>
+<div class="col-md-1">
+
+  <!--<a href="#"><img src="assets/img/banner2.png" width="100%" ></a>-->
+
 </div>
 <div>
   <a href="#"><img src="assets/img/banner1.png" width="100%"></a>

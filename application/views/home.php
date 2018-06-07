@@ -4,9 +4,9 @@
       <!-- BEGIN NAVBAR-->
       <nav id="header-nav" class="navbar navbar--header navbar--overlay">
         <div class="container">
-          <div class="navbar__row js-navbar-row"><a href="index.html" class="navbar__brand">
+          <div class="navbar__row js-navbar-row">
             <a href="index.html" class="navbar__brand">
-              <img src="assets/img/logoCoinMarketBlanco.png" width="1000" >
+                <img src="assets/img/logoCoinMarketBlanco.png" width="1000" >
             </a>
             <div id="navbar-collapse-1" class="navbar__wrap">
               <ul class="navbar__nav">
@@ -54,6 +54,8 @@
         </div>
       </nav>
 
+
+
       <!-- END NAVBAR-->
       <div class="site-wrap js-site-wrap">
         <div class="widget js-widget">
@@ -71,9 +73,9 @@
                 <div class="container">
                   <div class="row">
 
-                  <!--  <div class="banner__caption">
+                  <div class="banner__caption">
                         <img src="assets/img/criptolist.png" height="100%" width="100%">
-                    </div>-->
+                    </div>
 
 
                     <div class="banner__search">
