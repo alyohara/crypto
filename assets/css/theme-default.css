@@ -15020,7 +15020,7 @@ div.wpcf7 img.ajax-loader {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 200px 0 70px;
+  padding: 70px 0 70px;
   z-index: 200;
     background-color: #cbcbcb;
 }
@@ -17302,6 +17302,16 @@ fieldset[disabled] .dropdown--select .dropdown-toggle {
 }
 
 .navbar--header {
+  position: relative;
+  z-index: 230;
+  background: #f6f6f6;
+  border: none;
+  min-height: inherit;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+.navbar--header-home {
   position: relative;
   z-index: 230;
   background: #f6f6f6;

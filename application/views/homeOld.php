@@ -1,15 +1,80 @@
 
+
+
+      <!-- BEGIN NAVBAR-->
+      <nav id="header-nav" class="navbar navbar--header-home navbar--overlay">
+        <div class="container">
+          <div class="navbar__row js-navbar-row">
+            <a href="index.html" class="navbar__brand">
+                <img src="assets/img/logoCoinMarketBlanco.png" width="1000" >
+            </a>
+            <div id="navbar-collapse-1" class="navbar__wrap">
+              <ul class="navbar__nav">
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">COINMARKETCAP
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
+                </li>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">CRYPTOMONEDAS
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
+                </li>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">NOTICIAS
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
+                </li>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">CALCULADORA
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
+                </li>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">ICOS
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
+                </li>
+                <li class="navbar__item js-dropdown active" ><a class="navbar__link" href="#">FORMACION
+                    <svg class="navbar__arrow">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg></a>
+
+                </li>
+
+              </ul>
+              <!-- end of block  navbar__nav-->
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <!-- END NAVBAR-->
       <div class="site-wrap js-site-wrap">
         <div class="widget js-widget">
           <div class="widget__content">
             <div class="banner js-banner banner--wide">
               <div class="banner__item">
-
+                <div class="map map--index map--banner">
+                  <div class="map__buttons">
+                    <button type="button" class="map__change-map js-map-btn">Property Map</button>
+                  </div>
+                  <div class="map__wrap">
+                    <div data-infobox-theme="white" class="map__view js-map-index-canvas"></div>
+                  </div>
+                </div>
                 <div class="container">
                   <div class="row">
 
                   <div class="banner__caption">
-                        <img src="<?php echo base_url();?>assets/img/criptolist.png" height="100%" width="100%">
+                        <img src="assets/img/criptolist.png" height="100%" width="100%">
                     </div>
 
 

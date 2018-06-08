@@ -1,13 +1,12 @@
 
-  </div>
 </div>
 <div class="bannerDerecho col-md-1">
 
-  <a href="#"><img src="assets/img/banner2.png" width="100%" ></a>
+  <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
 
 </div>
 <div>
-  <a href="#"><img src="assets/img/banner1.png" width="100%"></a>
+  <a href="#"><img src="<?php echo base_url();?>assets/img/banner1.png" width="100%"></a>
 </div>
 
 <!-- BEGIN FOOTER-->
@@ -34,7 +33,7 @@
                 <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 </p><p>ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi</p>
                 <a href="index.html" class="navbar__brand">
-                    <img src="assets/img/logoCoinMarketBlanco.png" width="1000" >
+                    <img src="<?php echo base_url();?>assets/img/logoCoinMarketBlanco.png" width="1000" >
                 </a>
               </div>
 
@@ -129,14 +128,16 @@
 <button type="button" class="scrollup js-scrollup"></button>
 <!-- end of block .scrollup-->
 <!-- BEGIN SCRIPTS and INCLUDES-->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places,drawing,geometry"></script>
-<script type="text/javascript" src="http://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+
+<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places,drawing,geometry"></script>
+<script type="text/javascript" src="http://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>-->
+
 <!--
 Contains vendor libraries (Bootstrap3, Jquery, Chosen, etc) already compiled into a single file, with
 versions that are verified to work with our theme. Normally, you should not edit that file.
 -->
 <!-- build:jsvendor-->
-<script type="text/javascript" src="assets/js/vendor.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/vendor.js"></script>
 <!-- endbuild-->
 <!--
 This file is used for demonstration purposes and contains example property items, that are mostly used to
@@ -144,21 +145,21 @@ render markers on the map. You can safely delete this file, after you've adapted
 to use your own data.
 -->
 <!-- build:jsdemodata-->
-<script type="text/javascript" src="assets/js/demodata.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/demodata.js"></script>
 <!-- endbuild-->
 <!--
 The library code that Realtyspace theme relies on, in order to function properly.
 Normally, you should not edit this file or add your own code there.
 -->
 <!-- build:jsapp-->
-<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/app.js"></script>
 <!-- endbuild-->
 <!--
 the main file, that you should modify. It contains lots of examples of
 plugin usage, with detailed comments about specific sections of the code.
 -->
 <!-- build:jsdemo-->
-<script type="text/javascript" src="assets/js/demo.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/demo.js"></script>
 <!-- endbuild--><!-- inject:ga  -->
 <!-- endinject -->
 <!-- END SCRIPTS and INCLUDES-->
