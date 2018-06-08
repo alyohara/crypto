@@ -2077,9 +2077,15 @@ pre code {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .container {
     width: 1100px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    width: 1300px;
   }
 }
 
