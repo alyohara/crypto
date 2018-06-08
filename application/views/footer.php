@@ -2,8 +2,8 @@
 </div>
 <div class="bannerDerecho col-md-1">
 
-  <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
-
+                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
+                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
 </div>
 <div>
   <a href="#"><img src="<?php echo base_url();?>assets/img/banner1.png" width="100%"></a>

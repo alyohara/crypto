@@ -214,6 +214,7 @@
 
 
                 <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
+                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
 
 
           </div>
