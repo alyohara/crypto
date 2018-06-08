@@ -79,7 +79,7 @@
                       <h5 style="color:black "> 24Hs. Vol.: $323.894.109.214 </h5 >
                     </div>
                     <div class="header__settings-column">
-                      <h5 style="color:black "> BTC Dominance: 39 % </h5 >
+                      <h5 style="color:black "> BTC Dominance: 39% </h5 >
                     </div>
 
 
@@ -117,7 +117,7 @@
                   <button data-toggle="dropdown" type="button" class="dropdown-toggle js-auth-nav-btn auth__nav-btn">
                     <svg class="auth__icon-user">
                       <use xlink:href="#icon-user"></use>
-                    </svg><span class="header__span"> Log in /</span>
+                    </svg><span class="header__span"> Log in/</span>
                   </button>
                   <div class="dropdown__menu auth__dropdown--login">
                     <!-- BEGIN AUTH LOGIN-->
@@ -210,11 +210,11 @@
 
 
       <div class="row">
-          <div class="col-md-1">
+          <div class="bannerIzquierdo col-md-1">
 
 
-                <!--<a href="#"><img src="assets/img/banner2.png" width="100%" ></a>-->
+                <a href="#"><img src="assets/img/banner2.png" width="100%" ></a>
 
 
           </div>
-          <div class="col-md-10">
+          <div class=" col-md-10">

@@ -1,9 +1,9 @@
 
   </div>
 </div>
-<div class="col-md-1">
+<div class="bannerDerecho col-md-1">
 
-  <!--<a href="#"><img src="assets/img/banner2.png" width="100%" ></a>-->
+  <a href="#"><img src="assets/img/banner2.png" width="100%" ></a>
 
 </div>
 <div>
