@@ -129,8 +129,8 @@
 <!-- end of block .scrollup-->
 <!-- BEGIN SCRIPTS and INCLUDES-->
 
-<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places,drawing,geometry"></script>
-<script type="text/javascript" src="http://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>-->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places,drawing,geometry"></script>
+<script type="text/javascript" src="http://cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
 
 <!--
 Contains vendor libraries (Bootstrap3, Jquery, Chosen, etc) already compiled into a single file, with
