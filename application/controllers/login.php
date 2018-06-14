@@ -17,7 +17,7 @@ class Login extends CI_Controller
 
   public function process(){
 
-    $username = $this->input->post('username');
+    $username = $this->input->post('username'); //just remeber username is an email
     $password = $this->input->post('password');
 
     if ($username!=''){
