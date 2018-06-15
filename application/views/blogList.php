@@ -18,26 +18,51 @@
                         </form>
                         <!-- END SEARCH-->
         <button type="button" data-goto-target=".js-categories-article" class="widget__btn--goto js-goto-btn">Show categories</button>
+
+        <!-- BEGIN ARTICLES SECTION -->
         <div class="site__main">
           <div class="widget js-widget widget--main widget--no-margin">
             <div class="widget__content">
               <div class="listing listing--list listing--article">
-                <div class="listing__item">
-                  <article class="article--list">
-                    <div class="article__item-header">
-                      <time datetime="2009-08-29" class="article__time">SEP<strong>02</strong></time>
-                      <div class="article__item-info">
-                        <h3 class="article__item-title"><a href="blog_details.html">You&rsquo;ve been approved for a rental home. Now what?</a></h3>
-                        <div class="article__tags">Category:<a href="#">Villa for sale</a>, <a href="#">Florida</a>, <a href="#">Miami</a>
-                        </div>
-                      </div><a href="blog_details.html" class="article__comment"><i class="fa fa-comments"></i>2 Comments</a>
-                    </div>
-                    <div class="clearfix"></div><a href="blog_details.html" class="article__preview"><img src="<?php echo base_url();?>assets/media-demo/properties/1740x960/05.jpg" alt=""></a>
-                    <div class="article__intro">
-                      <p>Congratulations! You&rsquo;ve found the perfect rental property and your application has been approved. Now there&rsquo;s just a few things you&rsquo;ll need. We work hard to achieve quality at affordable prices for our customers through optimizing our entire value chain, by building long-term supplier relationships, investing in highly automated production and producing large volumes.</p>
-                    </div><a href="blog_details.html" class="article__more">Read more</a>
-                  </article>
-                </div>
+
+
+
+                <?php
+                 foreach ($posts as $row) {
+                     //echo $news = $row->title;?>
+
+                     <div class="listing__item">
+                       <article class="article--list">
+                         <div class="article__item-header">
+                           <?php $d = $row->p_date;
+                                 $day =  substr($d, 8, 2);
+                                 $month = substr($d, 5, 2);
+                                 $year = substr($d, 0, 4);
+                                 $months = array( 'undefined', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dic');
+
+                                $m = $months[(int)$month];
+
+
+                                 ?>
+                           <time datetime="<?= $row->p_date; ?>" class="article__time"><strong><?= $day ?></strong><?= $m ?></time>
+                           <div class="article__item-info">
+                             <h3 class="article__item-title"><a href="blog_details.html">You&rsquo;ve been approved for a rental home. Now what?</a></h3>
+                             <div class="article__tags">Category:<a href="#">Villa for sale</a>, <a href="#">Florida</a>, <a href="#">Miami</a>
+                             </div>
+                           </div><a href="blog_details.html" class="article__comment"><i class="fa fa-comments"></i>2 Comments</a>
+                         </div>
+                         <div class="clearfix"></div><a href="blog_details.html" class="article__preview"><img src="<?php echo base_url();?>assets/media-demo/properties/1740x960/05.jpg" alt=""></a>
+                         <div class="article__intro">
+                           <p>Congratulations! You&rsquo;ve found the perfect rental property and your application has been approved. Now there&rsquo;s just a few things you&rsquo;ll need. We work hard to achieve quality at affordable prices for our customers through optimizing our entire value chain, by building long-term supplier relationships, investing in highly automated production and producing large volumes.</p>
+                         </div><a href="blog_details.html" class="article__more">Read more</a>
+                       </article>
+                     </div>
+
+
+
+                   <?php  } ?>
+
+                <!--
                 <div class="listing__item">
                   <article class="article--list">
                     <div class="article__item-header">
@@ -56,7 +81,7 @@
                           <source src="http://codefactory47.com/public/realtyspace/media/videotour.webm" type="video/webm">
                         </video>
                         <!--button.article__preview-play.js-player-play-->
-                      </div>
+                <!--      </div>
                     </div>
                     <div class="article__intro">
                       <p>Congratulations! You&rsquo;ve found the perfect rental property and your application has been approved. Now there&rsquo;s just a few things you&rsquo;ll need. We work hard to achieve quality at affordable prices for our customers through optimizing our entire value chain, by building long-term supplier relationships, investing in highly automated production and producing large volumes.</p>
@@ -99,27 +124,26 @@
                     </div><a href="blog_details.html" class="article__more">Read more</a>
                   </article>
                 </div>
+
+              -->
               </div>
             </div>
           </div>
           <div class="site__footer">
             <!-- BEGIN PAGINATION-->
             <nav class="listing__pagination">
-              <ul class="pagination-custom">
-                <li><a href="#"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a></li>
-                <li><a href="#">1</a></li>
-                <li><span>...</span></li>
-                <li class="active-before"><a href="#">3</a></li>
-                <li class="active"><span>4</span></li>
-                <li class="active-after"><a href="#">5</a></li>
-                <li><span>...</span></li>
-                <li><a href="#">15</a></li>
-                <li><a href="#"><span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a></li>
-              </ul>
+
+                  <?php echo $this->pagination->create_links(); ?>
+
             </nav>
             <!-- END PAGINATION-->
           </div>
         </div>
+
+
+
+        <!-- END ARTICLES SECTION -->
+
       </div>
       <!-- END Site-->
       <!-- BEGIN SIDEBAR-->
