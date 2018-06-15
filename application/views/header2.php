@@ -96,7 +96,7 @@
                     <!-- BEGIN SESSION ON -->
                     <h5 class="auth__title">Hola </h5>
 
-                    <form action="<?= base_url() ?>index.php/login/reset_password" class="form form--flex form--auth form--restore js-restore-form js-parsley" method="post">
+                    <form action="<?= base_url() ?> login/reset_password" class="form form--flex form--auth form--restore js-restore-form js-parsley" method="post">
                       <div class="row">
                         <div class="form-group">
                           <label for="restore-email-dropdown" class="control-label">Ingrese su Usuario o email</label>
@@ -287,7 +287,7 @@
       $error_msg=$this->session->flashdata('error_msg');
       if($error_msg){
         ?>
-        <div class="alert alert-danger fade in" style="width: 300px; position: absolute; top: 100px; left: 50%; margin-left: -70px; z-index: 999/*half the size of width*/">
+        <div class="alert alert-danger fade in" style="width: 300px; position: absolute; top: 100px; left: 50%; margin-left: -150px; z-index: 999; padding:10px 5px 10px 5px">
        <a href="#" class="close" data-dismiss="alert">&times;</a>
        <?php echo $error_msg; ?>
 
@@ -300,7 +300,7 @@
        <?php
       $error_msg=$this->session->flashdata('success_msg');
       if($error_msg){?>
-        <div class="alert alert-success fade in" style="width: 300px; position: absolute; top: 100px; left: 50%; margin-left: -70px; z-index: 999/*half the size of width*/">
+        <div class="alert alert-success fade in" style="width: 300px; position: absolute; top: 100px; left: 50%; margin-left: -150px; z-index: 999; padding:10px 5px 10px 5px">
           <a href="#" class="close" data-dismiss="alert">&times;</a>
           <?php echo $error_msg; ?>
         </div>
