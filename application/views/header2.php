@@ -239,7 +239,7 @@
                   <div class="dropdown__menu auth__dropdown--login">
                     <!-- BEGIN FAVORITES -->
                     <h5 class="auth__title">Favoritos</h5>
-
+                    <?php echo form_open("login/logout", array('class' => 'form form--flex form--auth js-login-form js-parsley')); ?>
                       <div class="row">
                         <div class="form__options">Fav1
                           <button type="button" class="js-user-login">Fav 1 Link</button>
@@ -253,10 +253,11 @@
                       <br>
                       <div class="row">
                         <div class="form__options">
-                          <button type="submit" class="form__submit"><?php
-                            echo anchor('login/logout','logout');?></button>
-                        </div>
 
+                        </div>
+                        <button type="submit" class="form__submit"><?php
+                          echo anchor('login/logout','logout');?></button>
+                        <?php echo form_close();?>
                       </div>
 
                     <?php

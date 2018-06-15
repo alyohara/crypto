@@ -135,26 +135,34 @@ if($query->num_rows()>0){
 
       if($email_check){
         //$this->db->insert('users', $user);
-        $password = md5('123456');
+        //$password = md5('123456');
         $data = $query->row_array();
-        $id = $data['id'];
-        $this->db->query("UPDATE users SET password='".$password."' WHERE id='".$id."' ");
+        $user_id = $data['id'];
+        //$this->db->query("UPDATE users SET password='".$password."' WHERE id='".$id."' ");
+        //  $data = array( 'password' => $password);
+        //  $this->db->where('id', $id);
+        //  $this->db->update('users', $data);
+        $check_state = md5('12345'.$id.'54321');
+        $url_helper = base_url().'recover/'.$check_state;
+        /////////////////////// PASSWORD RESET SAVE  /////////////////////////////
+        $cpss=array(
+        'user_id'=>$user_id,
+        'check_state'=>$check_state
+          );
+        $this->db->insert('change_pass', $cpss);
 
 
 
-      //  $data = array( 'password' => $password);
-      //  $this->db->where('id', $id);
-      //  $this->db->update('users', $data);
-
+        ////////////////////// PASSWORD RESET SAVE END ///////////////////////////
 
         $this->load->library('email');
         $this->email->from('admin@coinmarketcap.es', 'Servicio de Recupero');
         $this->email->to($email);
         $this->email->subject('Recupero de contraseña');
-        $this->email->message('Hola! Hemos recibido un cambiode contraseña, se ha dispuesto una provisoria que es 123456. Gracias');
+        $this->email->message('Hola! Hemos recibido un cambio de contraseña, se ha dispuesto una carga provisoria, para ello haga click en'.$url_helper.' . Gracias');
         $this->email->send();
 
-        $this->session->set_flashdata('success_msg', '<strong>Success!</strong> Email send with new password. <br> ');
+        $this->session->set_flashdata('success_msg', '<strong>Success!</strong> Email send with new password. <br> '.$url_helper);
         redirect('login');
 
       }
