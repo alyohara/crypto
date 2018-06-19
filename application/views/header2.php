@@ -96,7 +96,7 @@
                     <!-- BEGIN SESSION ON -->
                     <h5 class="auth__title">Hola </h5>
 
-                    <form action="<?= base_url() ?> login/reset_password" class="form form--flex form--auth form--restore js-restore-form js-parsley" method="post">
+                    <form action="<?= base_url() ?>login/reset_password" class="form form--flex form--auth form--restore js-restore-form js-parsley" method="post">
                       <div class="row">
                         <div class="form-group">
                           <label for="restore-email-dropdown" class="control-label">Ingrese su Usuario o email</label>

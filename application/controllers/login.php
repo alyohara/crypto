@@ -20,29 +20,12 @@ class Login extends CI_Controller
   public function process(){
 
     $user_login=array('email'=>$this->input->post('username'),'password'=>md5($this->input->post('password'))); // the username is the email, remeber that
-    $this->load->database();
-    $this->db->select('*');
-    $this->db->from('users');
-    $this->db->where('email',$user_login['email']);
-    $this->db->where('password',$user_login['password']);
+    $this->load->model('users');
+    $data = $this->users->chkUser($user_login['email'], $user_login['password']);
 
-      if($query=$this->db->get())
-      {
-          $data = $query->row_array();
-      }
-      else{
-          $data = false;
-      }
-
-
-      if($data)
-      {
-        $this->session->set_userdata('user_id',$data['id']);
-        $this->session->set_userdata('email',$data['email']);
-        $this->session->set_userdata('first_name',$data['first_name']);
-        $this->session->set_userdata('last_name',$data['last_name']);
-        redirect("login");
-
+    if($data)  {
+      $this->users->initSession($data);
+      redirect("login");
       }
       else{
         $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
@@ -60,23 +43,7 @@ class Login extends CI_Controller
   public function logout(){
     $this->session->sess_destroy();
     redirect("login");
-
   }
-
-  public function email_check($email){
-
-  $this->db->select('*');
-  $this->db->from('users');
-  $this->db->where('email',$email);
-  $query=$this->db->get();
-
-  if($query->num_rows()>0){
-    return false;
-  }else{
-    return true;
-  }
-
-}
 
   public function register_user(){
 
@@ -86,66 +53,36 @@ class Login extends CI_Controller
         'password'=>md5($this->input->post('password')),
         'email'=>$this->input->post('email')
           );
+        $this->load->model('users');
+        $email_check = $this->users->email_check($user['email']);
+        if(!$email_check){
+          $this->load->model('users');
+          $this->users->insertUser($user);
 
-
-//  $email_check = email_check($user['email']);
-$this->load->database();
-$this->db->select('*');
-$this->db->from('users');
-$this->db->where('email',$user['email']);
-$query=$this->db->get();
-
-if($query->num_rows()>0){
-  $email_check =  false;
-}else{
-  $email_check = true;
-}
-
-  if($email_check){
-    $this->db->insert('users', $user);
-    $this->session->set_flashdata('success_msg', '<strong>Success!</strong> Now login to your account.');
-    redirect('login');
-
+          $this->session->set_flashdata('success_msg', '<strong>Success!</strong> Now login to your account.');
+          redirect('login');
   }
   else{
-
     $this->session->set_flashdata('error_msg', '<strong>Error!</strong> A problem has been occurred while submitting your data.');
     redirect('login');
-
-
   }
 
   }
 
   public function reset_password ()  {
-    //check mail existense
-
+    $this->load->model('users');
     $email= $this->input->post('emailA');
-    $this->load->database();
-    $this->db->select('*');
-    $this->db->from('users');
-    $this->db->where('email',$email);
-    $query=$this->db->get();
-
-    if($query->num_rows()>0){
-      $email_check =  true;
-    }else{
-      $email_check = false;
-    }
+    $email_check = $this->users->email_check($email);
 
       if($email_check){
-        //$this->db->insert('users', $user);
-        //$password = md5('123456');
-        $data = $query->row_array();
+        $data = $this->users->getUser($email)->row_array();
+
         $user_id = $data['id'];
-        //$this->db->query("UPDATE users SET password='".$password."' WHERE id='".$id."' ");
-        //  $data = array( 'password' => $password);
-        //  $this->db->where('id', $id);
-        //  $this->db->update('users', $data);
-        $check_state = md5('12345'.$id.time().'54321');
+
+        $check_state = md5('12345'.$user_id.time().'54321');
         $url_helper = base_url().'recover/index/'.$check_state;
         /////////////////////// PASSWORD RESET SAVE  /////////////////////////////
-        $this->db->query("UPDATE change_pass SET status='0' WHERE $user_id='".$user_id."' ");
+        $this->db->query("UPDATE change_pass SET status='0' WHERE user_id ='".$user_id."' ");
         $cpss=array(
         'user_id'=>$user_id,
         'check_state'=>$check_state
