@@ -35,7 +35,7 @@
   <!-- endinject -->
 
     <div>
-      <a href="#"><img src="<?php echo base_url();?>assets/img/banner1.png" width="100%"></a>
+
     </div>
 
 <!-- <div class="header__settings">
@@ -68,84 +68,12 @@
             </a>
             <div class="header__settings">
 
-                    <div class="header__settings-column">
-                      <h5 style="color:black "> Cryptocurrencies: 154678 </h5 >
-                    </div>
-                    <div class="header__settings-column">
-                      <h5 style="color:black "> Markets: 11054 </h5 >
-                    </div>
-                    <div class="header__settings-column">
-                      <h5 style="color:black "> Market Cap: $323.894.109.214 </h5 >
-                    </div>
-                    <div class="header__settings-column">
-                      <h5 style="color:black "> 24Hs. Vol.: $323.894.109.214 </h5 >
-                    </div>
-                    <div class="header__settings-column">
-                      <h5 style="color:black "> BTC Dominance: 39% </h5 >
-                    </div>
-
-
             </div>
 
             <div class="auth auth--header">
               <ul class="auth__nav">
-                <?php if ((!isset($_SESSION['user_id'])) || ($_SESSION['type'] == 'admin' )) {
-                  ?>
-                <li class="dropdown auth__nav-item">
-                  <div class="dropdown__menu auth__dropdown--restore">
+                <?php if ((!isset($_SESSION['user_id']))  || ($_SESSION['type'] == 'user' )) {?>
 
-                    <!-- BEGIN SESSION ON -->
-                    <h5 class="auth__title">Hola </h5>
-
-                    <form action="<?= base_url() ?>login/reset_password" class="form form--flex form--auth form--restore js-restore-form js-parsley" method="post">
-                      <div class="row">
-                        <div class="form-group">
-                          <label for="restore-email-dropdown" class="control-label">Ingrese su Usuario o email</label>
-                          <input type="email" name="emailA" id="restore-email-dropdown" required class="form-control">
-                        </div>
-                      </div>
-                      <div class="row">
-                        <button type="submit" class="form__submit">Resetear contraseña</button>
-                      </div>
-                      <div class="row">
-                        <div class="form__options">Volver a
-                          <button type="button" class="js-user-login">Iniciar sesión</button> ó
-                          <button type="button" class="js-user-register">Registrarse</button>
-                        </div>
-                        <!-- end of block .auth__links-->
-                      </div>
-                    </form>
-                  </div>
-                  </li>
-
-
-                      <li class="dropdown auth__nav-item">
-                        <div class="dropdown__menu auth__dropdown--restore">
-                      <!-- BEGIN AUTH RESTORE //// todo esta parte!!!!!!!!-->
-                      <h5 class="auth__title">Resetear contraseña</h5>
-                        <?php echo form_open("login/reset_password", array('class' => 'form form--flex form--auth js-login-form js-parsley')); ?>
-
-                        <div class="row">
-                          <div class="form-group">
-                            <label for="restore-email-dropdown" class="control-label">Ingrese su Usuario o email</label>
-                            <input type="email" name="emailB" id="restore-email-dropdown" required class="form-control">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <button type="submit" class="form__submit">Resetear contraseña</button>
-                        </div>
-                        <div class="row">
-                          <div class="form__options">Volver a
-                            <button type="button" class="js-user-login">Iniciar sesión</button> ó
-                            <button type="button" class="js-user-register">Registrarse</button>
-                          </div>
-                          <!-- end of block .auth__links-->
-                        </div>
-                            <?php echo form_close();?>
-                      <!-- end of block .auth__form-->
-                      <!-- END AUTH RESTORE-->
-                    </div>
-                  </li>
                   <li class="dropdown auth__nav-item">
                     <button data-toggle="dropdown" type="button" class="dropdown-toggle js-auth-nav-btn auth__nav-btn">
                       <svg class="auth__icon-user">
@@ -156,10 +84,10 @@
                       <!-- BEGIN AUTH LOGIN-->
                       <h5 class="auth__title">Login in your account</h5>
 
-                      <?php echo form_open("login/process", array('class' => 'form form--flex form--auth js-login-form js-parsley')); ?>
+                      <?php echo form_open("adminAccess/login", array('class' => 'form form--flex form--auth js-login-form js-parsley')); ?>
                         <div class="row">
                           <div class="form-group">
-                            <label for="login-username-dropdown" class="control-label">Username</label>
+                            <label for="login-username-dropdown" class="control-label">Email</label>
                             <input type="text" name="username" id="login-username-dropdown" required data-parsley-trigger="keyup" data-parsley-minlength="6" data-parsley-validation-threshold="5" data-parsley-minlength-message="Login should be at least 6 chars" class="form-control" placeholder="Your email">
                           </div>
                           <div class="form-group">
@@ -168,19 +96,11 @@
                           </div>
                         </div>
                         <div class="row">
-                          <div class="form__options form__options--forgot">
-                            <button type="button" class="js-user-restore">Forgot password ?</button>
-                          </div>
                           <button type="submit" class="form__submit">Sign in</button>
                         </div>
                         <div class="form__remember">
                           <input type="checkbox" id="remember-in-dropdown" class="in-checkbox">
                           <label for="remember-in-dropdown" class="in-label">Remember me</label>
-                        </div>
-                        <div class="row">
-                          <div class="form__options">Not a user yet?
-                            <button type="button" class="js-user-register">Get an account</button>
-                          </div>
                         </div>
                         <?php echo form_close();?>
 
@@ -188,49 +108,11 @@
                       <!-- END AUTH LOGIN-->
                     </div>
                   </li>
-                  <li class="dropdown auth__nav-item">
-                    <button data-toggle="dropdown" type="button" class="dropdown-toggle auth__nav-btn"><span class="header__span">  Sign up</span></button>
-                    <div class="dropdown__menu auth__dropdown--register">
-                      <!-- BEGIN AUTH REGISTER-->
-                      <h5 class="auth__title">Sign up a new account</h5>
-
-                      <?php echo form_open("login/register_user", array('class' => 'form form--flex form--auth js-login-form js-parsley')); ?>
-                        <div class="row">
-                          <div class="form-group form-group--col-6">
-                            <label for="register-name-dropdown" class="control-label">First name</label>
-                            <input type="text" name="username" id="register-name-dropdown" required class="form-control">
-                          </div>
-                          <div class="form-group form-group--col-6">
-                            <label for="register-lastname-dropdown" class="control-label">Last name</label>
-                            <input type="text" name="name" id="register-lastname-dropdown" required class="form-control">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="form-group form-group--col-6">
-                            <label for="register-email-dropdown" class="control-label">E-mail</label>
-                            <input type="email" name="email" id="register-email-dropdown" required class="form-control">
-                          </div>
-                          <div class="form-group form-group--col-6">
-                            <label for="register-password-dropdown" class="control-label">Password</label>
-                            <input type="password" name="password" id="register-password-dropdown" required class="form-control">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="form__options">Back to
-                            <button type="button" class="js-user-login">Log In</button>
-                          </div>
-                          <button type="submit" class="form__submit">Sign up</button>
-                        </div>
-                        <?php echo form_close();?>
-                      <!-- end of block .auth__form-->
-                      <!-- END AUTH REGISTER-->
-
                   </div>
                 </li>
 
 
-
-<?php } elseif ($_SESSION['type'] == 'user' ) {?>
+<?php } elseif ($_SESSION['type'] == 'admin' )  {?>
                 <li class="dropdown auth__nav-item">
                   <button data-toggle="dropdown" type="button" class="dropdown-toggle js-auth-nav-btn auth__nav-btn">
                     <svg class="auth__icon-user">
@@ -239,25 +121,24 @@
                   </button>
                   <div class="dropdown__menu auth__dropdown--login">
                     <!-- BEGIN FAVORITES -->
-                    <h5 class="auth__title">Favoritos</h5>
-                    <?php echo form_open("login/logout", array('class' => 'form form--flex form--auth js-login-form js-parsley')); ?>
-                      <div class="row">
-                        <div class="form__options">Fav1
-                          <button type="button" class="js-user-login">Fav 1 Link</button>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="form__options">Fav2
-                          <button type="button" class="js-user-login">Fav 2 Link</button>
-                        </div>
-                      </div>
+
+                    <?php echo form_open("adminAccess/logout", array('class' => 'form form--flex form--auth js-login-form js-parsley')); ?>
+                    <ul>
+                      <li>
+                        <a href="<?= base_url()?>adminAccess">Inicio</a>
+                      </li>
+                      <li>
+                        <a href="<?= base_url()?>adminAccess/profile">Crear Nuevo Post</a>
+                      </li>
+                    </ul>
+
                       <br>
                       <div class="row">
                         <div class="form__options">
 
                         </div>
                         <button type="submit" class="form__submit"><?php
-                          echo anchor('login/logout','logout');?></button>
+                          echo anchor('adminAccess/logout','logout');?></button>
                         <?php echo form_close();?>
                       </div>
 
@@ -318,8 +199,6 @@
           <div class="bannerIzquierdo col-md-1">
 
 
-                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
-                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
 
 
           </div>

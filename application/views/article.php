@@ -24,11 +24,7 @@
           <div class="widget js-widget widget--main widget--no-margin">
             <div class="widget__content">
               <div class="listing listing--list listing--article">
-                <?php
-                 foreach ($posts as $row) {
-?>
-
-                     <div class="listing__item">
+                 <div class="listing__item">
                        <article class="article--list">
                          <div class="article__item-header">
                            <?php $d = $row->p_date;
@@ -48,24 +44,23 @@
                          <div class="clearfix"></div><a href="blog_details.html" class="article__preview"><img src="<?php echo base_url();?>assets/media-demo/properties/1740x960/05.jpg" alt=""></a>
                          <div class="article__intro">
                            <p><?= $row->description; ?></p>
-                         </div><a href="<?= base_url(); ?>article/post/<?=  $row->id ?>" class="article__more">Read more</a>
+                         </div>
+                         <div class="article__comment">
+                           <p><?= $row->content; ?></p>
+                         </div>
+
+                         <a href="<?= base_url(); ?>blog/index" class="article__more">Go Back</a>
                        </article>
                      </div>
 
 
 
-                   <?php  } ?>
 
               </div>
             </div>
           </div>
           <div class="site__footer">
-            <!-- BEGIN PAGINATION-->
-            <nav class="listing__pagination">
 
-                  <?php echo $this->pagination->create_links(); ?>
-
-            </nav>
             <!-- END PAGINATION-->
           </div>
         </div>
