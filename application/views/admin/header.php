@@ -128,7 +128,16 @@
                         <a href="<?= base_url()?>adminAccess">Inicio</a>
                       </li>
                       <li>
-                        <a href="<?= base_url()?>adminAccess/profile">Crear Nuevo Post</a>
+                        <a href="<?= base_url()?>adminAccess/newPost">Crear Nuevo Post</a>
+                      </li>
+                      <li>
+                        <a href="<?= base_url()?>adminAccess/posts">Ver Posts</a>
+                      </li>
+                      <li>
+                        <a href="<?= base_url()?>adminAccess/addAdmin">Alta Nuevo Usuario Admin</a>
+                      </li>
+                      <li>
+                        <a href="<?= base_url()?>adminAccess/chgPass">Modificar Mis Datos</a>
                       </li>
                     </ul>
 
@@ -196,6 +205,7 @@
 
 
       <div class="row">
+
           <div class="bannerIzquierdo col-md-1">
 
 

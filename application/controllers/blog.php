@@ -8,10 +8,7 @@ class Blog extends CI_Controller {
 	{
 
 		$this->posts->pagInit();
-		$this->db->order_by("id", "desc");
-
-		$data['posts'] = $this->db->limit(3, $offset)->get('posts')->result();
-
+		$data = $this->posts->allPosts($offset);
 		$this->load->helper('url');
 		$this->load->view('header2');
 		$this->load->view('navbar');

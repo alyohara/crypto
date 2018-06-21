@@ -1,6 +1,9 @@
-<h1>Nuevo Post</h1>
+<h1>Editar Post</h1>
 </br>
-<?= form_open_multipart("upload/do_upload", array('class' => 'form form--flex form--auth js-login-form js-parsley')); ?>
+<?php
+$hidden = array('id' => $row->id);
+
+echo form_open_multipart("upload/do_upload2", array('class' => 'form form--flex form--auth js-login-form js-parsley'), $hidden); ?>
 <?php
   //$atributos = array('style' 	=> 'text-align: center; with: 100%');
 	//echo form_input_text('Titulo', 'Ingresa Titulo del Nuevo Post', $atributos);
@@ -19,10 +22,12 @@
 	// send file to method uploadTest of controller welcome
 	//echo form_open_multipart("welcome/uploadTest");
 	//echo form_input_file('Selecciona una imagen');
+
+
   $data = array(
           'name'          => 'title',
           'id'            => 'title',
-          'value'         => '',
+          'value'         => $row->title,
           'maxlength'     => '100',
           'size'          => '50',
           'style'         => 'width:100%',
@@ -34,7 +39,7 @@
   $data = array(
           'name'          => 'description',
           'id'            => 'description',
-          'value'         => '',
+          'value'         => $row->description,
           'maxlength'     => '100',
           'size'          => '50',
           'style'         => 'width:100%',
@@ -49,7 +54,7 @@
   $data = array(
           'name'          => 'content',
           'id'            => 'content',
-          'value'         => '',
+          'value'         => $row->content,
           'maxlength'     => '100',
           'size'          => '50',
           'style'         => 'width:100%',
@@ -65,7 +70,7 @@ echo form_label('Contenido del Post', 'content');
   ?>
 </br>
 <hr>
-<h4>Elija una Imagen Principal </h4>
+<h4>Elija una Imagen Principal (modificará la anterior)</h4>
 
   <?php
   $data = array(
@@ -80,29 +85,38 @@ echo form_label('Contenido del Post', 'content');
   <hr>
 
   <?php
+  if ($row->status == 'active'){
+    $stat = TRUE;
+    $stat2 = FALSE;
+  } else {
+    $stat =FALSE;
+    $stat2 = TRUE;
+  }
   $data = array(
         'name'          => 'publish',
         'id'            => 'publish',
         'value'         => 'active',
-        'checked'       => FALSE,
+        'checked'       => $stat,
         'style'         => 'margin:20px'
 );
-echo form_label('¿Desea publicar inmediatamente su Post?', 'publish');
-echo '<div class row>   Si ';
+echo form_label('Estado de publicación del Post', 'publish');
+echo '<div class row>   Publicado ';
 echo form_radio($data);
 $data = array(
       'name'          => 'publish',
       'id'            => 'publish',
       'value'         => 'inactive',
-      'checked'       => TRUE,
+      'checked'       => $stat2,
       'style'         => 'margin:20px'
 );
-echo 'No ';
+echo 'No Publicado ';
 echo form_radio($data);
 echo '</div>';
   ?>
   <hr>
   <div class="row">
-  <button type="submit" class="btn btn-default">Crear Nuevo Post</button>
+  <button type="submit" class="btn btn-default">Guardar Cambios</button>
 </div>
 <?= form_close(); ?>
+<div class="clearfix"></div>
+<br>

@@ -13,13 +13,14 @@ class Article extends CI_Controller
     if ($row){
       $data = array('row' => $row );
       $this->load->view('article', $data);
-      
+
     } else {
       $this->load->view('notArt');
     }
 		  $this->load->view('footer');
 
   }
+  
 }
 
  ?>

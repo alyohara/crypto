@@ -41,6 +41,7 @@ class Users extends CI_Model
 
    public function initSession($data='', $type='')
   {
+    //$this->session->sess_destroy();
     $this->session->set_userdata('user_id',$data['id']);
     $this->session->set_userdata('email',$data['email']);
     $this->session->set_userdata('first_name',$data['first_name']);
@@ -61,9 +62,35 @@ class Users extends CI_Model
     }
   }
 
+
+
+    public function email_check_admin($email){
+      $this->load->database();
+      $this->db->select('*');
+      $this->db->from('admins');
+      $this->db->where('email',$email);
+      $query=$this->db->get();
+      if($query->num_rows()>0){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
   public function insertUser($user='')
   {
     $this->db->insert('users', $user);
+  }
+
+  public function insertAdmin($user='')
+  {
+    $this->db->insert('admins', $user);
+  }
+
+  public function updateAdmin($user='', $id='')
+  {
+    $this->db->where('id', $id);
+    $this->db->update('admins', $user);
   }
 
   public function getUser($email='')
@@ -73,7 +100,24 @@ class Users extends CI_Model
     $this->db->from('users');
     $this->db->where('email',$email);
     return $this->db->get();
+  }
 
+  public function getAdmin()
+  {
+    $this->load->database();
+    $query = $this->db->query("SELECT * FROM admins WHERE id = '".$_SESSION['user_id']."'");
+    return $query->row();
+
+
+  }
+
+  public function getAuthor($id='')
+  {
+    $this->load->database();
+    $this->db->select('*');
+    $this->db->from('admins');
+    $this->db->where('id',$id);
+    return $this->db->get();
   }
 
   public function passwordReset ($user_id = '', $check_state = '')

@@ -3,8 +3,8 @@
     <div class="row">
       <div class="site site--main">
         <header class="site__header">
-          <h1 class="site__title">Blog</h1>
-          <h2 class="site__headline">Check out our new market updates</h2>
+          <h1 class="site__title">Blog - All Posts</h1>
+
         </header>
                         <!-- BEGIN SEARCH-->
                         <form class="form form--search form--article-listing">
@@ -51,10 +51,16 @@
                            </div>
                            <!-- </div><a href="blog_details.html" class="article__comment"><i class="fa fa-comments"></i>2 Comments</a> -->
                          </div>
-                         <div class="clearfix"></div><a href="" class="article__preview"><img src="<?php echo base_url().'public/img/'.$row->img;?>" alt=""></a>
+
                          <div class="article__intro">
                            <p><?= $row->description; ?></p>
-                         </div><a href="<?= base_url(); ?>article/post/<?=  $row->id ?>" class="article__more">Read more</a>
+
+                           <p <?php if ($row->status == 'active'){
+                             echo 'style="color: #02841c; background-color: #64fc83; text-align: center; padding:5px; margin: 5px"';
+                           }else {
+                             echo 'style="color: #9e0606; background-color: #f7a8a8; text-align: center; padding:5px; margin: 5px"';
+                           } ?>  ><?= $row->status; ?></p>
+                         </div><a href="<?= base_url(); ?>adminAccess/editPost/<?=  $row->id ?>" class="article__more">Editar</a>
                        </article>
                      </div>
 
