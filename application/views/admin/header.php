@@ -27,6 +27,9 @@
     <!--[if lt IE 11]>
     <link rel="stylesheet" href="assets/css/ie-fix.css"><![endif]-->
     <link rel="icon" href="<?php echo base_url();?>assets/img/favicon.ico" type="image/x-icon">
+    <!-- TinyMCE script -->
+    <script src='<?= base_url() ?>resources/tinymce/tinymce.min.js'></script>
+
   </head>
   <body class="index menu-default hover-default scroll-animation">
 
@@ -127,20 +130,39 @@
                       <li>
                         <a href="<?= base_url()?>adminAccess">Inicio</a>
                       </li>
+                      <hr>
+
+                      <ul> <h4>Posts:</h4>
                       <li>
                         <a href="<?= base_url()?>adminAccess/newPost">Crear Nuevo Post</a>
                       </li>
                       <li>
                         <a href="<?= base_url()?>adminAccess/posts">Ver Posts</a>
                       </li>
+                    </ul>
+                    <hr>
+                      <ul> <h4>Usuarios:</h4>
                       <li>
                         <a href="<?= base_url()?>adminAccess/addAdmin">Alta Nuevo Usuario Admin</a>
                       </li>
                       <li>
+                        <a href="<?= base_url()?>adminAccess">Usuarios COINMARKETCAP</a>
+                      </li>
+                    </ul>
+                      <hr>
+                      <ul> <h4>Banners:</h4>
+                      <li>
+                        <a href="<?= base_url()?>adminAccess/updateBanner">Agregar/Modificar Banner</a>
+                      </li>
+
+                    </ul>
+                      <hr>
+                        <ul> <h4>Perfil:</h4>
+                      <li>
                         <a href="<?= base_url()?>adminAccess/chgPass">Modificar Mis Datos</a>
                       </li>
                     </ul>
-
+                    <hr>
                       <br>
                       <div class="row">
                         <div class="form__options">

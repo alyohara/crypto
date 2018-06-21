@@ -117,6 +117,32 @@ class Upload extends CI_Controller {
     }
 
 
+    public function do_upload_banner()
+    {
+      $config['upload_path']          = './public/banners/';
+      $config['allowed_types']        = 'gif|jpg|png';
+      $loc = $this->input->post('loc');
+      $this->load->library('upload', $config);
+
+      if ( ! $this->upload->do_upload($loc))
+      {
+              $error = array('error' => $this->upload->display_errors());
+              $img ='';
+      }
+      else
+      {
+             $data2 = array('upload_data' => $this->upload->data());
+             $img = $this->upload->data('file_name');
+      }
+      $data  = array('path' => $img);
+      $this->db->where('name', $loc);
+      $this->db->update('banners', $data);
+      $this->session->set_flashdata('success_msg', 'Image Saved.');
+      redirect("adminAccess/updateBanner");
+
+}
+
+
 
 
 }

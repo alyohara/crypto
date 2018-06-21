@@ -2,11 +2,11 @@
 </div>
 <div class="bannerDerecho col-md-1">
 
-                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
-                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
+                <a href="#"><img src="<?php echo base_url();?>public/banners/<?= $bannerRight->path?>" width="100%" ></a>
+                <a href="#"><img src="<?php echo base_url();?>public/banners/<?= $bannerRight->path?>" width="100%" ></a>
 </div>
 <div>
-  <a href="#"><img src="<?php echo base_url();?>assets/img/banner1.png" width="100%"></a>
+  <a href="#"><img src="<?php echo base_url();?>public/banners/<?= $bannerDown->path?>" width="100%"></a>
 </div>
 
 <!-- BEGIN FOOTER-->

@@ -7,11 +7,16 @@ class AdminAccess extends CI_Controller
 
 
 
-  public function index ()
+  public function index ($offset = 0)
   {
+    $this->users->pagInit();
+		$data = $this->users->getAllUsers($offset);
     $this->load->view('admin/header');
     $this->load->view('admin/navbar');
     $this->load->view('admin/homeUp');
+    if ((!isset($_SESSION['user_id'])) || ($_SESSION['type'] != 'admin' )){}
+      else{$this->load->view('admin/userList', $data);}
+
     $this->load->view('admin/homeDown');
     $this->load->view('admin/footer');
   }
@@ -218,6 +223,15 @@ class AdminAccess extends CI_Controller
 
   }
 
+  public function updateBanner()
+  {
+    $this->load->view('admin/header');
+    $this->load->view('admin/navbar');
+    $this->load->view('admin/homeUp');
+    $this->load->view('admin/updateBanner');
+    $this->load->view('admin/footer');
+
+  }
 
 }
 

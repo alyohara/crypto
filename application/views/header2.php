@@ -35,7 +35,7 @@
   <!-- endinject -->
 
     <div>
-      <a href="#"><img src="<?php echo base_url();?>assets/img/banner1.png" width="100%"></a>
+      <a href="#"><img src="<?php echo base_url();?>public/banners/<?= $bannerUP->path?>" width="100%"></a>
     </div>
 
 <!-- <div class="header__settings">
@@ -318,8 +318,8 @@
           <div class="bannerIzquierdo col-md-1">
 
 
-                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
-                <a href="#"><img src="<?php echo base_url();?>assets/img/banner2.png" width="100%" ></a>
+                <a href="#"><img src="<?php echo base_url();?>public/banners/<?= $bannerLeft->path?>" width="100%" ></a>
+                <a href="#"><img src="<?php echo base_url();?>public/banners/<?= $bannerLeft->path?>" ></a>
 
 
           </div>

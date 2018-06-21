@@ -6,20 +6,8 @@
           <h1 class="site__title">Blog</h1>
           <h2 class="site__headline">Check out our new market updates</h2>
         </header>
-                        <!-- BEGIN SEARCH-->
-                        <form class="form form--search form--article-listing">
-                          <div class="row">
-                            <div class="form-group">
-                              <label class="control-label"></label>
-                              <input type="text" placeholder="Search your post" class="form-control">
-                              <button class="form__lens"><span class="glyphicon glyphicon-search"></span></button>
-                            </div>
-                          </div>
-                        </form>
-                        <!-- END SEARCH-->
-        <button type="button" data-goto-target=".js-categories-article" class="widget__btn--goto js-goto-btn">Show categories</button>
 
-        <!-- BEGIN ARTICLES SECTION -->
+            <!-- BEGIN ARTICLES SECTION -->
         <div class="site__main">
           <div class="widget js-widget widget--main widget--no-margin">
             <div class="widget__content">
@@ -41,7 +29,7 @@
                              </div>
                            <!-- </div><a href="blog_details.html" class="article__comment"><i class="fa fa-comments"></i>2 Comments</a> -->
                          </div>
-                         <div class="clearfix"></div><a href="blog_details.html" class="article__preview"><img src="<?php echo base_url();?>assets/media-demo/properties/1740x960/05.jpg" alt=""></a>
+                          <div class="clearfix"></div><a href="" class="article__preview"><img src="<?php echo base_url().'public/img/'.$row->img;?>" alt=""></a>
                          <div class="article__intro">
                            <p><?= $row->description; ?></p>
                          </div>

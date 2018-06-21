@@ -7,12 +7,17 @@ class Login extends CI_Controller
 
   public function index ()
   {
-    $this->load->helper('url');
-
-    $this->load->view('header2');
+    $this->load->model('banner');
+    $bannerUP = $this->banner->getUpBanner();
+    $bannerDown = $this->banner->getDownBanner();
+    $bannerLeft = $this->banner->getLeftBanner();
+    $bannerRight = $this->banner->getRightBanner();
+    $data = array('bannerUP' => $bannerUP,'bannerDown' => $bannerDown, 'bannerLeft' => $bannerLeft, 'bannerRight' => $bannerRight);
+    
+    $this->load->view('header2', $data);
     $this->load->view('navbar');
     $this->load->view('home');
-    $this->load->view('footer');
+    $this->load->view('footer', $data);
   }
 
   public function process(){

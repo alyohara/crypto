@@ -55,7 +55,8 @@
           'style'         => 'width:100%',
           'placeholder'   => 'Contenido del Nuevo Post',
           'cols'          => '50',
-          'rows'          => '10'
+          'rows'          => '10', 
+          'class'         => 'editor'
 
   );
 echo form_label('Contenido del Post', 'content');

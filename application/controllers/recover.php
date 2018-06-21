@@ -11,12 +11,19 @@ class Recover extends CI_Controller
 
     // CHECK CHANGE existense //
     $query = $this->users->checkChange($iod);
+    $this->load->model('banner');
+    $bannerUP = $this->banner->getUpBanner();
+    $bannerDown = $this->banner->getDownBanner();
+    $bannerLeft = $this->banner->getLeftBanner();
+    $bannerRight = $this->banner->getRightBanner();
+    $data2 = array('bannerUP' => $bannerUP,'bannerDown' => $bannerDown, 'bannerLeft' => $bannerLeft, 'bannerRight' => $bannerRight);
+
     if($query->num_rows()>0){
       //let change pass
-        $this->load->view('header2');
+        $this->load->view('header2', $data2);
         $this->load->view('navbar');
         $this->load->view('changepass', $data);
-        $this->load->view('footer');
+        $this->load->view('footer', $data2);
     }else{
       $this->session->set_flashdata('error_msg', '<strong>Error!</strong> A problem has been occurred while submitting your data.<br>Please try again');
       redirect('login');
